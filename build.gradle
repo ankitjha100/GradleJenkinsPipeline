@@ -23,7 +23,7 @@ dependencies {
 }
 
 application {
-    mainClass = 'com.example.App'
+    mainClass = 'App'
 }
    
 
