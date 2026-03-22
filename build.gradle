@@ -8,26 +8,27 @@
  */
 
 // Apply the java plugin to add support for Java
-apply plugin: 'java'
+plugins {
+    id 'java'
+    id 'application'
+}
 
-// Apply the application plugin to add support for building an application
-apply plugin: 'application'
-
-// In this section you declare where to find the dependencies of your project
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    // This dependency is found on compile classpath of this component and consumers.
     implementation 'com.google.guava:guava:23.0'
-
-    // Use JUnit test framework
     testImplementation 'junit:junit:4.13.2'
 }
 
+application {
+    mainClass = 'com.example.App'
+}
+   
+
 // Define the main class for the application
-mainClassName = 'App'
+
 task display{ 
 doLast{
 println '6A devops class'
