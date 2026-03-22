@@ -12,7 +12,10 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'gradle build' // Run Gradle build
+                withEnv(["JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64"]) {
+                    sh 'java -version'
+                    sh 'gradle build'
+                }
             }
         }
         stage('Test') {
